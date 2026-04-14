@@ -3,70 +3,84 @@
 <head>
   <title>NeoNiyati</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
       margin: 0;
-      background: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f9fafb;
       color: #111;
-      line-height: 1.6;
     }
 
     .container {
-      max-width: 800px;
-      margin: 0 auto;
+      max-width: 900px;
+      margin: auto;
       padding: 60px 20px;
     }
 
+    .hero {
+      margin-bottom: 60px;
+    }
+
     h1 {
-      font-size: 40px;
+      font-size: 42px;
       margin-bottom: 10px;
-    }
-
-    h2 {
-      margin-top: 60px;
-      font-size: 24px;
-    }
-
-    p {
-      color: #444;
-      margin: 15px 0;
+      letter-spacing: -1px;
     }
 
     .tagline {
       font-size: 18px;
-      color: #666;
-      margin-bottom: 40px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      color: #444;
     }
 
     .section {
-      margin-top: 50px;
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      margin-top: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
     }
 
     .highlight {
       font-weight: 500;
-      color: #000;
     }
 
     .contact {
-      margin-top: 40px;
+      margin-top: 30px;
+      font-size: 16px;
+    }
+
+    a {
+      color: #111;
+      text-decoration: none;
+      border-bottom: 1px solid #ccc;
+    }
+
+    a:hover {
+      border-color: #111;
     }
 
     .footer {
       margin-top: 80px;
-      font-size: 14px;
+      font-size: 13px;
       color: #888;
-    }
-
-    a {
-      color: #000;
-      text-decoration: none;
-      border-bottom: 1px solid #ddd;
-    }
-
-    a:hover {
-      border-color: #000;
     }
 
   </style>
@@ -76,65 +90,64 @@
 
 <div class="container">
 
-  <h1>NeoNiyati</h1>
-  <div class="tagline">Legal Hiring. Focused on long-term fit.</div>
+  <div class="hero">
+    <h1>NeoNiyati</h1>
+    <div class="tagline">Legal Hiring. Focused on long-term fit.</div>
 
-  <p>
-    NeoNiyati is a legal talent advisory working with in-house teams and law firms on hiring, primarily at mid to senior levels.
-  </p>
-
-  <p>
-    We focus on helping organizations make better hiring decisions by identifying candidates who are a strong match in terms of capability, intent, and culture.
-  </p>
+    <p>
+      NeoNiyati is a legal talent advisory working with in-house teams and law firms on hiring, primarily at mid to senior levels.
+    </p>
+  </div>
 
   <div class="section">
     <h2>What we do</h2>
-    <p>
-      We work on legal hiring across in-house teams and law firms, with a focus on roles where the right fit matters.
-    </p>
-    <p>
-      Our approach is simple — understand the role well, and share a small set of relevant, well-matched candidates.
-    </p>
+
+    <div class="card">
+      We work on legal hiring across in-house teams and law firms, focusing on roles where the right fit matters.
+    </div>
   </div>
 
   <div class="section">
     <h2>How we work</h2>
-    <p>
-      <span class="highlight">Quality over volume.</span> We do not send multiple profiles. Instead, we focus on a smaller, well-considered shortlist.
-    </p>
-    <p>
-      <span class="highlight">Beyond the CV.</span> Candidates are evaluated on experience, intent, communication, and overall fit.
-    </p>
-    <p>
-      <span class="highlight">Long-term thinking.</span> The focus is not just on closing a role, but on building the right team.
-    </p>
+
+    <div class="card">
+      <span class="highlight">Quality over volume.</span><br>
+      We focus on a small, well-matched shortlist instead of multiple profiles.
+    </div>
+
+    <div class="card">
+      <span class="highlight">Beyond the CV.</span><br>
+      Candidates are evaluated on capability, intent, communication, and overall fit.
+    </div>
+
+    <div class="card">
+      <span class="highlight">Long-term thinking.</span><br>
+      The goal is not just to close a role, but to build the right team.
+    </div>
   </div>
 
   <div class="section">
     <h2>Who we work with</h2>
-    <p>
-      In-house legal teams and law firms looking to hire at mid to senior levels.
-    </p>
+
+    <div class="card">
+      In-house legal teams and law firms hiring at mid to senior levels.
+    </div>
   </div>
 
   <div class="section">
-    <h2>About the founder</h2>
-    <p>
-      NeoNiyati is founded by Lavanya Behl, who brings over 15 years of experience, including a decade in the legal industry.
-    </p>
-    <p>
-      She has worked at Amarchand Mangaldas and later co-founded LawWiser, where she worked closely with in-house leaders and law firms across the ecosystem.
-    </p>
+    <h2>About</h2>
+
+    <div class="card">
+      Founded by Lavanya Behl, with over 15 years of experience including a decade in the legal industry at Amarchand Mangaldas and as co-founder of LawWiser.
+    </div>
   </div>
 
-  <div class="section contact">
+  <div class="section">
     <h2>Get in touch</h2>
-    <p>
-      For hiring requirements or to connect:
-    </p>
-    <p>
-      <a href="mailto:hello@neoniyati.com">hello@neoniyati.com</a>
-    </p>
+
+    <div class="card contact">
+      <a href="mailto:lavanya@neoniyati.com">lavanya@neoniyati.com</a>
+    </div>
   </div>
 
   <div class="footer">
