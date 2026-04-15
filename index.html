@@ -30,8 +30,11 @@
     border-bottom: 0.5px solid rgba(15,14,13,0.1);
   }
   .nav-logo {
-    font-family: var(--serif); font-size: 20px; font-weight: 400; letter-spacing: 0.5px;
-    color: var(--ink); text-decoration: none;
+    font-family: var(--serif); font-size: 19px; font-weight: 400; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 7px;
+  }
+  .nav-logo-dot {
+    width: 5px; height: 5px; border-radius: 50%; background: var(--gold); display: inline-block; flex-shrink: 0; margin-bottom: 1px;
   }
   .nav-links { display: flex; gap: 36px; align-items: center; }
   .nav-links a { font-size: 13px; color: var(--ink-muted); text-decoration: none; letter-spacing: 0.3px; transition: color 0.2s; }
@@ -200,6 +203,7 @@
   .contact { background: var(--cream); text-align: center; padding: 120px 48px; }
   .contact .section-h2 { margin: 0 auto 20px; max-width: 600px; }
   .contact-sub { font-size: 16px; color: var(--ink-muted); margin-bottom: 48px; }
+  .contact-confidential { font-size: 13px; color: var(--ink-faint); margin-top: 28px; letter-spacing: 0.2px; }
   .contact-email {
     font-family: var(--serif); font-size: 24px; color: var(--ink);
     text-decoration: none; border-bottom: 1px solid var(--gold);
@@ -231,7 +235,7 @@
 <body>
 
 <nav>
-  <a class="nav-logo" href="#">NeoNiyati</a>
+  <a class="nav-logo" href="#"><span>NeoNiyati</span><span class="nav-logo-dot"></span></a>
   <div class="nav-links">
     <a href="#what">What we do</a>
     <a href="#how">How we work</a>
@@ -243,7 +247,7 @@
 
 <section class="hero">
   <div class="hero-inner">
-    <span class="hero-tag">Legal Hiring · India</span>
+    <span class="hero-tag">Legal Talent Advisory · India</span>
     <h1>The right people for<br><em>the right roles.</em></h1>
     <p class="hero-sub">Working with in-house legal teams and law firms to build stronger, more thoughtfully matched teams — at mid to senior levels.</p>
     <div class="hero-actions">
@@ -260,27 +264,27 @@
   <div class="section-inner">
     <span class="section-label">What we do</span>
     <h2 class="section-h2">Legal hiring, done<br><em>with precision.</em></h2>
-    <p class="section-body">We specialise in legal hiring across in-house teams and law firms — focusing exclusively on mid to senior-level roles where the quality of the match defines the outcome.</p>
+    <p class="section-body">We specialise in legal hiring across in-house teams and law firms - focusing exclusively on mid to senior-level roles where the quality of the match defines the outcome.</p>
     <div class="what-grid">
       <div class="what-card">
         <div class="what-num">01</div>
         <h3>In-house legal teams</h3>
-        <p>Partnering with general counsels and legal heads to find lawyers who go beyond technical skill — candidates who understand business, culture, and long-term growth.</p>
+        <p>We work with in-house legal teams at mid to senior levels - placing General Counsel and senior lawyers, in partnership with legal heads, CHROs and talent acquisition teams. We look for people who go beyond technical skill and understand business, culture, and long-term growth.</p>
       </div>
       <div class="what-card">
         <div class="what-num">02</div>
         <h3>Law firm recruitment</h3>
-        <p>Working with law firms to place lawyers at the associate, senior associate, and partner level — with an eye for career trajectory and practice fit, not just pedigree.</p>
+        <p>We focus on senior hiring for law firms - partners, practice heads, and rainmakers who bring both legal expertise and a book of business. These are hires that shape a firm's direction and directly drive revenue. We treat them with the weight they deserve.</p>
       </div>
       <div class="what-card">
         <div class="what-num">03</div>
         <h3>Mid to senior mandates</h3>
-        <p>We focus where it matters most. Senior hires shape teams, culture, and direction — and deserve a search process that reflects that weight.</p>
+        <p>We focus where it matters most. Senior hires shape teams, culture, and direction - and deserve a search process that reflects that weight.</p>
       </div>
       <div class="what-card">
         <div class="what-num">04</div>
         <h3>Long-term fit</h3>
-        <p>Every search is oriented around lasting placement. A role closed is not the goal — a team strengthened is.</p>
+        <p>Every search is oriented around lasting placement. A role closed is not the goal - a team strengthened is.</p>
       </div>
     </div>
   </div>
@@ -295,7 +299,7 @@
         <span class="how-n">i.</span>
         <div class="how-content">
           <h3>Quality over volume</h3>
-          <p>We send a small, well-matched shortlist — not a pile of profiles. Every candidate we put forward has been spoken with, evaluated, and genuinely considered for this specific role.</p>
+          <p>We send a small, well-matched shortlist - not a pile of profiles. Every candidate we put forward has been spoken with, evaluated, and genuinely considered for this specific role.</p>
         </div>
       </div>
       <div class="how-item">
@@ -309,14 +313,14 @@
         <span class="how-n">iii.</span>
         <div class="how-content">
           <h3>Long-term thinking</h3>
-          <p>We're not optimising for speed or volume. We're optimising for outcomes — for teams that actually work well together, and hires that stick.</p>
+          <p>We're not optimising for speed or volume. We're optimising for outcomes - for teams that actually work well together, and hires that stick.</p>
         </div>
       </div>
       <div class="how-item">
         <span class="how-n">iv.</span>
         <div class="how-content">
           <h3>Honest, transparent dialogue</h3>
-          <p>With clients and candidates alike. We give candid views on the market, the role, and the fit — because honest guidance leads to better decisions for everyone.</p>
+          <p>With clients and candidates alike. We give candid views on the market, the role, and the fit - because honest guidance leads to better decisions for everyone.</p>
         </div>
       </div>
     </div>
@@ -329,7 +333,7 @@
     <div class="who-inner-grid">
       <div class="who-text">
         <h2 class="section-h2">Organisations building <em>lasting</em> legal teams.</h2>
-        <p>We work with companies and firms that take hiring seriously — those who understand that the right legal hire isn't just about filling a seat, but about shaping a function.</p>
+        <p>We work with companies and firms that take hiring seriously - those who understand that the right legal hire isn't just about filling a seat, but about shaping a function.</p>
         <p>Our clients are typically in-house legal teams at growth-stage or established organisations, and law firms hiring at the senior end of the curve.</p>
         <div class="who-tags">
           <span class="who-tag">In-house legal</span>
@@ -354,7 +358,7 @@
   <div class="section-inner">
     <span class="section-label">About NeoNiyati</span>
     <h2 class="section-h2">Founded on <em>experience</em>,<br>built on intent.</h2>
-    <p class="about-body">NeoNiyati was founded by Lavanya Behl — with over 15 years of experience across the legal industry, including nearly a decade at Amarchand Mangaldas and as co-founder of LawWiser. She brings a practitioner's understanding of what makes a great legal hire, and a recruiter's discipline in finding one.</p>
+    <p class="about-body">NeoNiyati was founded by Lavanya Behl - with over 15 years of industry experience, including nearly a decade in the legal ecosystem in a Practice Development role at Shardul Amarchand Mangaldas and as Co-founder of the knowledge sharing platform, LawWiser. She brings a deep understanding of how legal teams operate and what makes a strong legal hire, along with the discipline to identify and assess the right talent.</p>
     <div class="about-stats">
       <div class="about-stat">
         <div class="about-stat-n">15+</div>
@@ -376,13 +380,14 @@
   <div class="section-inner">
     <span class="section-label" style="display:block;text-align:center;">Get in touch</span>
     <h2 class="section-h2" style="text-align:center;">Let's find the<br><em>right person together.</em></h2>
-    <p class="contact-sub">Whether you're hiring or exploring opportunities, we'd love to hear from you.</p>
+    <p class="contact-sub">Whether you're hiring or exploring a move, reach out directly. All conversations are held in strict confidence.</p>
     <a class="contact-email" href="mailto:lavanya@neoniyati.com">lavanya@neoniyati.com</a>
+    <p class="contact-confidential">Every conversation and all information shared with us is treated with complete confidentiality.</p>
   </div>
 </section>
 
 <footer>
-  <span class="footer-logo">NeoNiyati</span>
+  <span class="footer-logo" style="letter-spacing: 2px; text-transform: uppercase; font-size: 14px; display: flex; align-items: center; gap: 7px;">NeoNiyati <span style="width:4px;height:4px;border-radius:50%;background:var(--gold);display:inline-block;"></span></span>
   <span class="footer-copy">&copy; 2025 NeoNiyati. Legal Hiring, India.</span>
 </footer>
 
