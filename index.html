@@ -4,238 +4,140 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NeoNiyati</title>
+
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --ink: #0f0e0d;
-    --ink-muted: #5a5750;
-    --ink-faint: #9a9590;
-    --cream: #f7f5f0;
-    --cream-dark: #ede9e0;
-    --gold: #b8935a;
-    --gold-light: #e8d9c0;
-    --white: #ffffff;
-    --serif: Georgia, 'Times New Roman', serif;
-    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-  }
-  html { scroll-behavior: smooth; }
-  body { font-family: var(--sans); background: var(--white); color: var(--ink); overflow-x: hidden; }
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 48px; height: 68px;
-    background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
-    border-bottom: 0.5px solid rgba(15,14,13,0.1);
-  }
-  .nav-logo {
-    font-family: var(--serif); font-size: 19px; font-weight: 400; letter-spacing: 2.5px;
-    text-transform: uppercase; color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 7px;
-  }
-  .nav-logo-dot {
-    width: 5px; height: 5px; border-radius: 50%; background: var(--gold); display: inline-block; flex-shrink: 0; margin-bottom: 1px;
-  }
-  .nav-links { display: flex; gap: 36px; align-items: center; }
-  .nav-links a { font-size: 13px; color: var(--ink-muted); text-decoration: none; letter-spacing: 0.3px; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--ink); }
-  .nav-cta {
-    font-size: 13px; padding: 8px 20px; background: var(--ink); color: var(--white);
-    text-decoration: none; letter-spacing: 0.3px; transition: background 0.2s;
-  }
-  .nav-cta:hover { background: #2a2724; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  /* HERO */
-  .hero {
-    min-height: 100vh; display: flex; align-items: center;
-    background: var(--cream); padding: 120px 48px 80px;
-    position: relative; overflow: hidden;
-  }
-  .hero::before {
-    content: ''; position: absolute; right: -80px; top: -80px;
-    width: 600px; height: 600px; border-radius: 50%;
-    background: var(--gold-light); opacity: 0.25;
-  }
-  .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; position: relative; }
-  .hero-tag {
-    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 28px; display: block;
-  }
-  .hero h1 {
-    font-family: var(--serif); font-size: clamp(44px, 6vw, 80px); font-weight: 400;
-    line-height: 1.1; letter-spacing: -1px; color: var(--ink);
-    max-width: 700px; margin-bottom: 28px;
-  }
-  .hero h1 em { font-style: italic; color: var(--gold); }
-  .hero-sub {
-    font-size: 17px; color: var(--ink-muted); line-height: 1.7;
-    max-width: 480px; margin-bottom: 44px;
-  }
-  .hero-actions { display: flex; gap: 16px; align-items: center; }
-  .btn-primary {
-    padding: 14px 32px; background: var(--ink); color: var(--white);
-    font-size: 14px; letter-spacing: 0.3px; text-decoration: none;
-    display: inline-block; transition: background 0.2s;
-  }
-  .btn-primary:hover { background: #2a2724; }
-  .btn-ghost {
-    padding: 14px 0; color: var(--ink); font-size: 14px;
-    text-decoration: none; border-bottom: 1px solid var(--ink);
-    letter-spacing: 0.3px; transition: color 0.2s, border-color 0.2s;
-  }
-  .btn-ghost:hover { color: var(--gold); border-color: var(--gold); }
-  .hero-scroll {
-    position: absolute; bottom: 40px; left: 48px;
-    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
-    color: var(--ink-faint); display: flex; align-items: center; gap: 12px;
-  }
-  .hero-scroll::before {
-    content: ''; width: 40px; height: 0.5px; background: var(--ink-faint);
-  }
+:root {
+  --ink: #0f0e0d;
+  --ink-muted: #5a5750;
+  --ink-faint: #9a9590;
+  --cream: #f7f5f0;
+  --cream-dark: #ede9e0;
+  --gold: #b8935a;
+  --white: #ffffff;
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
 
-  /* DIVIDER */
-  .divider { height: 0.5px; background: var(--cream-dark); }
+body {
+  font-family: var(--sans);
+  background: var(--white);
+  color: var(--ink);
+}
 
-  /* SECTION BASE */
-  section { padding: 100px 48px; }
-  .section-inner { max-width: 1100px; margin: 0 auto; }
-  .section-label {
-    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 48px; display: block;
-  }
-  .section-h2 {
-    font-family: var(--serif); font-size: clamp(30px, 3.5vw, 50px);
-    font-weight: 400; line-height: 1.2; letter-spacing: -0.5px;
-    color: var(--ink); margin-bottom: 24px;
-  }
-  .section-h2 em { font-style: italic; color: var(--gold); }
-  .section-body { font-size: 16px; color: var(--ink-muted); line-height: 1.8; max-width: 580px; }
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 68px;
+  background: rgba(255,255,255,0.95);
+  border-bottom: 0.5px solid rgba(15,14,13,0.1);
+}
 
-  /* WHAT WE DO */
-  .what { background: var(--white); }
-  .what-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
-    margin-top: 72px; border: 0.5px solid var(--cream-dark);
-  }
-  .what-card {
-    padding: 48px 44px; border: 0.5px solid var(--cream-dark);
-    position: relative; transition: background 0.25s;
-  }
-  .what-card:hover { background: var(--cream); }
-  .what-num {
-    font-family: var(--serif); font-size: 40px; color: var(--gold-light);
-    line-height: 1; margin-bottom: 24px; font-style: italic;
-  }
-  .what-card h3 {
-    font-family: var(--serif); font-size: 20px; font-weight: 400;
-    margin-bottom: 12px; color: var(--ink);
-  }
-  .what-card p { font-size: 14px; color: var(--ink-muted); line-height: 1.7; }
+/* NEW LOGO — Variation B */
+.b-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
 
-  /* HOW WE WORK */
-  .how { background: var(--cream); }
-  .how-list { margin-top: 64px; }
-  .how-item {
-    display: grid; grid-template-columns: 80px 1fr; gap: 0;
-    border-top: 0.5px solid rgba(15,14,13,0.15); padding: 40px 0;
-    align-items: start;
-  }
-  .how-item:last-child { border-bottom: 0.5px solid rgba(15,14,13,0.15); }
-  .how-n {
-    font-family: var(--serif); font-size: 14px; font-style: italic;
-    color: var(--ink-faint); padding-top: 4px;
-  }
-  .how-content h3 {
-    font-family: var(--serif); font-size: 22px; font-weight: 400;
-    margin-bottom: 10px; color: var(--ink);
-  }
-  .how-content p { font-size: 15px; color: var(--ink-muted); line-height: 1.7; max-width: 600px; }
+.b-wl {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 24px;
+  color: var(--ink);
+}
 
-  /* WHO */
-  .who { background: var(--white); }
-  .who-inner-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
-    align-items: center; margin-top: 64px;
-  }
-  .who-text p { font-size: 15px; color: var(--ink-muted); line-height: 1.8; margin-bottom: 16px; }
-  .who-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
-  .who-tag {
-    padding: 8px 18px; border: 0.5px solid var(--cream-dark);
-    font-size: 13px; color: var(--ink-muted); background: var(--cream);
-  }
-  .who-visual {
-    aspect-ratio: 4/5; background: var(--cream-dark);
-    display: flex; align-items: center; justify-content: center;
-    position: relative; overflow: hidden;
-  }
-  .who-visual-inner { text-align: center; padding: 48px; }
-  .who-initial {
-    font-family: var(--serif); font-size: 120px; font-weight: 400;
-    color: var(--gold-light); line-height: 1; font-style: italic;
-  }
-  .who-name {
-    font-family: var(--serif); font-size: 22px; font-weight: 400;
-    color: var(--ink); margin-top: 12px;
-  }
-  .who-title { font-size: 13px; color: var(--ink-muted); margin-top: 6px; letter-spacing: 0.3px; }
+.b-wl .neo {
+  font-style: italic;
+  font-weight: 600;
+}
 
-  /* ABOUT — dark band */
-  .about { background: var(--ink); padding: 100px 48px; }
-  .about .section-label { color: var(--gold); }
-  .about .section-h2 { color: var(--white); }
-  .about .section-h2 em { color: var(--gold); }
-  .about-body { font-size: 18px; color: rgba(255,255,255,0.65); line-height: 1.8; max-width: 660px; margin-top: 32px; }
-  .about-stats {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
-    margin-top: 72px; border: 0.5px solid rgba(255,255,255,0.1);
-  }
-  .about-stat {
-    padding: 44px 40px; border: 0.5px solid rgba(255,255,255,0.1);
-    text-align: center;
-  }
-  .about-stat-n {
-    font-family: var(--serif); font-size: 52px; font-weight: 400;
-    color: var(--gold); font-style: italic; line-height: 1;
-  }
-  .about-stat-l { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 10px; letter-spacing: 0.5px; }
+.b-wl .niy {
+  font-style: normal;
+  font-weight: 400;
+}
 
-  /* CONTACT */
-  .contact { background: var(--cream); text-align: center; padding: 120px 48px; }
-  .contact .section-h2 { margin: 0 auto 20px; max-width: 600px; }
-  .contact-sub { font-size: 16px; color: var(--ink-muted); margin-bottom: 48px; }
-  .contact-confidential { font-size: 13px; color: var(--ink-faint); margin-top: 28px; letter-spacing: 0.2px; }
-  .contact-email {
-    font-family: var(--serif); font-size: 24px; color: var(--ink);
-    text-decoration: none; border-bottom: 1px solid var(--gold);
-    padding-bottom: 4px; font-style: italic; transition: color 0.2s;
-  }
-  .contact-email:hover { color: var(--gold); }
+.b-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin-top: 2px;
+}
 
-  /* FOOTER */
-  footer {
-    background: var(--ink); padding: 32px 48px;
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  .footer-logo { font-family: var(--serif); font-size: 16px; color: rgba(255,255,255,0.5); }
-  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); letter-spacing: 0.3px; }
+.nav-links {
+  display: flex;
+  gap: 36px;
+}
 
-  @media (max-width: 700px) {
-    nav { padding: 0 24px; }
-    .nav-links { display: none; }
-    section { padding: 72px 24px; }
-    .hero { padding: 100px 24px 64px; }
-    .hero-scroll { left: 24px; }
-    .what-grid { grid-template-columns: 1fr; }
-    .who-inner-grid { grid-template-columns: 1fr; gap: 40px; }
-    .about-stats { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 24px; }
-  }
+.nav-links a {
+  font-size: 13px;
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+
+.nav-cta {
+  padding: 8px 20px;
+  background: var(--ink);
+  color: white;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--cream);
+  padding: 120px 48px;
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-size: 64px;
+  font-weight: 400;
+}
+
+.hero em {
+  color: var(--gold);
+}
+
+.hero-sub {
+  margin-top: 20px;
+  color: var(--ink-muted);
+}
+
+.btn-primary {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--ink);
+  color: white;
+  text-decoration: none;
+}
 </style>
 </head>
+
 <body>
 
+<!-- NAV -->
 <nav>
-  <a class="nav-logo" href="#"><span>NeoNiyati</span><span class="nav-logo-dot"></span></a>
+  <a href="#">
+    <span class="b-wrap">
+      <span class="b-wl">
+        <span class="neo">Neo</span><span class="niy">Niyati</span>
+      </span>
+      <span class="b-dot"></span>
+    </span>
+  </a>
+
   <div class="nav-links">
     <a href="#what">What we do</a>
     <a href="#how">How we work</a>
@@ -245,151 +147,21 @@
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-inner">
-    <span class="hero-tag">Legal Talent Advisory · India</span>
-    <h1>The right people for<br><em>the right roles.</em></h1>
-    <p class="hero-sub">Working with in-house legal teams and law firms to build stronger, more thoughtfully matched teams — at mid to senior levels.</p>
-    <div class="hero-actions">
-      <a class="btn-primary" href="#contact">Get in touch</a>
-      <a class="btn-ghost" href="#what">Learn more</a>
-    </div>
-  </div>
-  <div class="hero-scroll">Scroll to explore</div>
-</section>
+  <div>
+    <h1>
+      The right people for<br>
+      <em>the right roles.</em>
+    </h1>
 
-<div class="divider"></div>
+    <p class="hero-sub">
+      Working with in-house legal teams and law firms to build stronger, more thoughtfully matched teams.
+    </p>
 
-<section class="what" id="what">
-  <div class="section-inner">
-    <span class="section-label">What we do</span>
-    <h2 class="section-h2">Legal hiring, done<br><em>with precision.</em></h2>
-    <p class="section-body">We specialise in legal hiring across in-house teams and law firms - focusing exclusively on mid to senior-level roles where the quality of the match defines the outcome.</p>
-    <div class="what-grid">
-      <div class="what-card">
-        <div class="what-num">01</div>
-        <h3>In-house legal teams</h3>
-        <p>We work with CHROs and TA teams to place lawyers at the GC and Group GC level and also help Legal Heads expand their teams. We look for people who go beyond technical skill and understand business, culture, and long-term growth.</p>
-      </div>
-      <div class="what-card">
-        <div class="what-num">02</div>
-        <h3>Law firm recruitment</h3>
-        <p>We focus on senior hiring for law firms - partners, practice heads, and rainmakers who bring both legal expertise and a book of business. These are hires that shape a firm's direction and directly drive revenue. We treat them with the weight they deserve.</p>
-      </div>
-      <div class="what-card">
-        <div class="what-num">03</div>
-        <h3>Mid to senior mandates</h3>
-        <p>We focus where it matters most. Senior hires shape teams, culture, and direction - and deserve a search process that reflects that weight.</p>
-      </div>
-      <div class="what-card">
-        <div class="what-num">04</div>
-        <h3>Long-term fit</h3>
-        <p>Every search is oriented around lasting placement. A role closed is not the goal - a team strengthened is.</p>
-      </div>
-    </div>
+    <a class="btn-primary" href="#contact">Get in touch</a>
   </div>
 </section>
-
-<section class="how" id="how">
-  <div class="section-inner">
-    <span class="section-label">How we work</span>
-    <h2 class="section-h2">A sharper, more <em>considered</em> process.</h2>
-    <div class="how-list">
-      <div class="how-item">
-        <span class="how-n">i.</span>
-        <div class="how-content">
-          <h3>Quality over volume</h3>
-          <p>We send a small, well-matched shortlist - not a pile of profiles. Every candidate we put forward has been spoken with, evaluated, and genuinely considered for this specific role.</p>
-        </div>
-      </div>
-      <div class="how-item">
-        <span class="how-n">ii.</span>
-        <div class="how-content">
-          <h3>Beyond the CV</h3>
-          <p>We assess capability, communication, intent, and cultural alignment. A strong résumé is a starting point, not a conclusion. We do the work to understand who the person actually is.</p>
-        </div>
-      </div>
-      <div class="how-item">
-        <span class="how-n">iii.</span>
-        <div class="how-content">
-          <h3>Long-term thinking</h3>
-          <p>We're not optimising for speed or volume. We're optimising for outcomes - for teams that actually work well together, and hires that stick.</p>
-        </div>
-      </div>
-      <div class="how-item">
-        <span class="how-n">iv.</span>
-        <div class="how-content">
-          <h3>Honest, transparent dialogue</h3>
-          <p>With clients and candidates alike. We give candid views on the market, the role, and the fit - because honest guidance leads to better decisions for everyone.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="who" id="who">
-  <div class="section-inner">
-    <span class="section-label">Who we work with</span>
-    <div class="who-inner-grid">
-      <div class="who-text">
-        <h2 class="section-h2">Organisations building <em>lasting</em> legal teams.</h2>
-        <p>We work with companies and firms that take hiring seriously - those who understand that the right legal hire isn't just about filling a seat, but about shaping a function.</p>
-        <p>Our clients are typically in-house legal teams at growth-stage or established organisations, and law firms hiring at the senior end of the curve.</p>
-        <div class="who-tags">
-          <span class="who-tag">In-house legal</span>
-          <span class="who-tag">Law firms</span>
-          <span class="who-tag">Mid-level mandates</span>
-          <span class="who-tag">Senior search</span>
-          <span class="who-tag">General counsel</span>
-        </div>
-      </div>
-      <div class="who-visual">
-        <div class="who-visual-inner">
-          <div class="who-initial">LB</div>
-          <div class="who-name">Lavanya Behl</div>
-          <div class="who-title">Founder, NeoNiyati</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="about" id="about">
-  <div class="section-inner">
-    <span class="section-label">About NeoNiyati</span>
-    <h2 class="section-h2">Founded on <em>experience</em>,<br>built on intent.</h2>
-    <p class="about-body">NeoNiyati was founded by Lavanya Behl - with over 15 years of industry experience, including nearly a decade in the legal ecosystem in a Practice Development role at Shardul Amarchand Mangaldas and as Co-founder of the knowledge sharing platform, LawWiser. She brings a deep understanding of how legal teams operate and what makes a strong legal hire, along with the discipline to identify and assess the right talent.</p>
-    <div class="about-stats">
-      <div class="about-stat">
-        <div class="about-stat-n">15+</div>
-        <div class="about-stat-l">Years of industry experience</div>
-      </div>
-      <div class="about-stat">
-        <div class="about-stat-n">10</div>
-        <div class="about-stat-l">Years in the legal sector</div>
-      </div>
-      <div class="about-stat">
-        <div class="about-stat-n">01</div>
-        <div class="about-stat-l">Relentless focus: legal hiring</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="section-inner">
-    <span class="section-label" style="display:block;text-align:center;">Get in touch</span>
-    <h2 class="section-h2" style="text-align:center;">Let's find the<br><em>right person together.</em></h2>
-    <p class="contact-sub">Whether you're hiring or exploring a move, reach out directly. All conversations are held in strict confidence.</p>
-    <a class="contact-email" href="mailto:lavanya@neoniyati.com">lavanya@neoniyati.com</a>
-    <p class="contact-confidential">Every conversation and all information shared with us is treated with complete confidentiality.</p>
-  </div>
-</section>
-
-<footer>
-  <span class="footer-logo" style="letter-spacing: 2px; text-transform: uppercase; font-size: 14px; display: flex; align-items: center; gap: 7px;">NeoNiyati <span style="width:4px;height:4px;border-radius:50%;background:var(--gold);display:inline-block;"></span></span>
-  <span class="footer-copy">&copy; 2025 NeoNiyati. Legal Hiring, India.</span>
-</footer>
 
 </body>
 </html>
