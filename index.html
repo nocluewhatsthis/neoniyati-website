@@ -32,12 +32,12 @@
   }
   .nav-logo {
     font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; font-weight: 400;
-    color: var(--ink); text-decoration: none; display: inline-flex; align-items: baseline; letter-spacing: 0.3px;
+    color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; letter-spacing: 0.3px;
   }
   .nav-logo .nl-neo { font-style: italic; font-weight: 600; }
-  .nav-logo .nl-niyat { font-style: normal; font-weight: 400; }
-  .nav-logo .nl-i-wrap { position: relative; display: inline-block; font-style: normal; font-weight: 400; }
-  .nav-logo .nl-dot { position: absolute; width: 4px; height: 4px; border-radius: 50%; background: var(--gold); left: 50%; transform: translateX(-50%); top: -5px; }
+  .nav-logo .nl-niyati { font-style: normal; font-weight: 400; }
+  .nav-logo .nl-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+  .nav-links { display: flex; gap: 36px; align-items: center; }
   .nav-links { display: flex; gap: 36px; align-items: center; }
   .nav-links a { font-size: 13px; color: var(--ink-muted); text-decoration: none; letter-spacing: 0.3px; transition: color 0.2s; }
   .nav-links a:hover { color: var(--ink); }
@@ -240,7 +240,7 @@
 <body>
 
 <nav>
-  <a class="nav-logo" href="#"><span class="nl-neo">Neo</span><span class="nl-niyat">Niyat</span><span class="nl-i-wrap">i<span class="nl-dot"></span></span></a>
+<a class="nav-logo" href="#"><span class="nl-neo">Neo</span><span class="nl-niyati">Niyati</span><span class="nl-dot"></span></a>
   <div class="nav-links">
     <a href="#what">What we do</a>
     <a href="#how">How we work</a>
