@@ -41,11 +41,17 @@
   .nav-links { display: flex; gap: 36px; align-items: center; }
   .nav-links a { font-size: 13px; color: var(--ink-muted); text-decoration: none; letter-spacing: 0.3px; transition: color 0.2s; }
   .nav-links a:hover { color: var(--ink); }
-  .nav-cta {
-    font-size: 13px; padding: 8px 20px; background: var(--ink); color: var(--cream);
-    text-decoration: none; letter-spacing: 0.3px; transition: background 0.2s;
-  }
-  .nav-cta:hover { background: #2a2724; }
+ .nav-cta {
+  font-size: 13px;
+  padding: 8px 20px;
+  background: var(--white);
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: background 0.2s;
+  border: 0.5px solid rgba(15,14,13,0.2);
+}
+.nav-cta:hover { background: var(--cream); }
 
   /* HERO */
   .hero {
